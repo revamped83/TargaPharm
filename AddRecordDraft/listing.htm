@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Pharmacy...</title>
+<script type="text/javascript" src="listing1.js"></script>
+<script type="text/javascript" src="listing.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="listing1();">
+<h1>Pharmacy...</h1>
+<ul>
+  <li><a href="">Home</a></li>
+  <li><a href="">Add Record</a></li>
+  <li><a href="">Edit Record</a></li>
+  <li><a href="">Manage</a></li>
+</ul>
+<hr>
+<p class="center"><i>To create a record, enter record details below.</i></p>
+<form>
+<fieldset>
+<legend>Seller Details</legend>
+<p class="redonly"><i>*Request Fields</i></p>
+<label for="itName"><span id="txt">Item Name<span class="redonly">*</span></span><select id="itName"></select></label>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Add new item</a></br></br>
+<label for="itQuan"><span id="txt">Sale Quantity<span class="redonly">*</span></span><input type="txt" name="itQuan" id="itQuan" size="50"/></label></br></br>
+<label for="sPrice"><span id="txt">Sale Price<span class="redonly">*</span></span><input type="txt" name="sPrice" id="sPrice" size="50"/></label></br></br>
+<button type="button" onclick="listing();">Listing</button>
+<input id="button" type="reset" value="Reset"/>
+</fieldset>
+</form>
+<div id="output"><div>
+</body>
+</html>
