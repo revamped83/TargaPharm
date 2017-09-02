@@ -26,7 +26,7 @@ CREATE TABLE ItemPurchase (
   ItemID            int         NOT NULL,
   TimeDate        datetime    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   ItQuantity      int         NOT NULL,
-  WholesalePrice  Decimal     NOT NULL,
+  WholesalePrice  Decimal(10,2)     NOT NULL,
   PRIMARY KEY (ItemID, TimeDate),
   FOREIGN KEY (ItemID) REFERENCES Item (ItemID)
 ); 
@@ -38,7 +38,7 @@ CREATE TABLE ItemPurchase (
 CREATE TABLE CustomerSale (
   SaleID        int           NOT NULL,
   TimeDate      datetime      NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  SubTotal      Decimal       NOT NULL,
+  SubTotal      Decimal(10,2)       NOT NULL,
   PRIMARY KEY (SaleID)
   );
 
@@ -50,7 +50,7 @@ CREATE TABLE CustomerSale (
 CREATE TABLE ItemSale (
   SaleID        int           NOT NULL,
   ItemID        int           NOT NULL,
-  UnitPrice     Decimal       NOT NULL,
+  UnitPrice     Decimal(10,2)       NOT NULL,
   Quantity      int           DEFAULT NULL,
   PRIMARY KEY (ItemID, SaleID),
   FOREIGN KEY (SaleID) REFERENCES CustomerSale (SaleID),
