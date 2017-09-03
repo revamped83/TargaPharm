@@ -7,24 +7,26 @@ if ((isset($_GET["itID"])) && (isset($_GET["itQuan"])) && (isset($_GET["sPrice"]
 		$itID = $_GET["itID"];
 		$itQuan =  $_GET["itQuan"];
 		$sPrice =  $_GET["sPrice"];
+		$sid = $_GET["sid"];
 		$total = $itQuan*$sPrice;
 		$server = 'localhost';
 		$user = 'root';
 		$pass = '';
 		$dbname = 'targapharm';
 		$conn = mysqli_connect($server, $user, $pass, $dbname);
-		$sql = "Select SaleID WHERE saleID = ".$saleID."";
-		$result = mysqli_query($conn, $sql);
-		if (mysqli_num_rows($result) > 0)
+		if ($sid == 1)
 		{
-			$sql = "UPDATE CustomerSale SET SubTotal = SubTotal + ".$total." WHERE saleID = ".$saleID."";
+			$sql = "INSERT INTO CustomerSale (SaleID, SubTotal) VALUES (".$saleID.", ".$total.")";
 			if (mysqli_query($conn, $sql)){
 					$sql = "INSERT INTO itemsale (itemID, saleID, unitprice, Quantity) VALUES (".$itID.", ".$saleID.",".$sPrice." ,".$itQuan.")";
 					if (mysqli_query($conn, $sql)){
-						echo "New record created successfully</br></br>";
-					}
-					else{
-						echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+						$sql = "UPDATE item SET ItStockLevel = ItStockLevel - ".$itQuan." WHERE itemID = ".$itID."";
+						if (mysqli_query($conn, $sql)){
+							echo "New record created successfully</br>";
+						}
+						else{
+							echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+						}
 					}
 				}
 				else{
@@ -33,14 +35,20 @@ if ((isset($_GET["itID"])) && (isset($_GET["itQuan"])) && (isset($_GET["sPrice"]
 		}
 		else
 		{
-			$sql = "INSERT INTO CustomerSale (SaleID, SubTotal) VALUES (".$saleID.", ".$total.")";
+			$sql = "UPDATE CustomerSale SET SubTotal = SubTotal + ".$total." WHERE SaleID = ".$saleID."";
 			if (mysqli_query($conn, $sql)){
 					$sql = "INSERT INTO itemsale (itemID, saleID, unitprice, Quantity) VALUES (".$itID.", ".$saleID.",".$sPrice." ,".$itQuan.")";
 					if (mysqli_query($conn, $sql)){
-						echo "New record created successfully</br></br>";
+						$sql = "UPDATE item SET ItStockLevel = ItStockLevel - ".$itQuan." WHERE itemID = ".$itID."";
+						if (mysqli_query($conn, $sql)){
+							echo "New record created successfully</br>";
+						}
+						else{
+							echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+						}
 					}
 					else{
-						echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+						echo "Error: Duplicate items <br>" ;
 					}
 				}
 				else{
