@@ -1,0 +1,118 @@
+body {
+	background-color: #f4f4f4;
+}
+h1 {
+	color: #547FA1;
+	text-align:center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	text-align: center;
+}
+li {
+    display: inline;
+	padding: 0.2em;
+}
+ul li a {
+	font-size: x-large;
+	display: inline-block;
+	text-decoration: none;
+	color: #692A67;
+	border-radius: 10px;
+	padding: 0.2em 1.5em;
+	border: 2px solid;
+	border-color : #999999;
+	background-color: #D3D3D3;
+}
+ul li a:hover {
+	background-color: #666464;
+}
+hr{
+  border-top: 1px solid #D3D3D3;
+}
+.center {
+	text-align: center;
+}
+.redonly{
+	color : red;
+}
+form {
+	display: block;
+	width: 80%;
+	margin-left: auto;
+    margin-right: auto;
+}
+legend {
+	color: #6B7588;
+	font-size: large;
+	font-weight: bold;
+}
+fieldset {
+	background-color: #E0ECF8;
+}
+.color1 {
+	color: #00BBC9;
+}
+
+.color2 {
+	color: #E8E555;
+}
+
+.color3 {
+	color: #FF7A00;
+}
+
+a {
+	color: #6FB07F;
+}
+
+#txt{
+  display: block;
+  float: left;
+  width: 130px;
+  text-align: right;
+  padding-right: 20px;
+}
+#txt1{
+  display: block;
+  float: left;
+  width: 190px;
+  text-align: right;
+  padding-right: 20px;
+}
+fieldset button{
+  position: relative;
+  left: 150px;
+}
+#button{
+  position: relative;
+  left: 150px;
+}
+#txt2{
+  display: block;
+  text-align: center;
+  padding-right: 20px;
+  font-style: italic;
+}
+#PB{
+background-color: #01008A;
+color: #FFFFFF;
+}
+#BIN{
+background-color: #008001;
+color: #FFFFFF;
+}
+#m1{
+	display: block;
+	margin: auto;
+	position: relative;
+	left: 0;
+}
+#m2{
+	display: block;
+	margin: auto;
+	position: relative;
+	left: 0;
+}
