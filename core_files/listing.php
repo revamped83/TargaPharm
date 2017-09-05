@@ -3,7 +3,7 @@ if ((isset($_GET["itID"])) && (isset($_GET["itQuan"])) && (isset($_GET["sPrice"]
 {
 	if ((!empty($_GET["itID"])) && (!empty($_GET["itQuan"])) && (!empty($_GET["sPrice"])))
 	{
-		if ((!is_numeric($_GET["itQuan"]) && (!is_numeric($_GET["sPrice"])))
+		if ((is_numeric($_GET["itQuan"])) && (is_numeric($_GET["sPrice"])))
 		{
 			$saleID = $_GET["saleid"];
 			$itID = $_GET["itID"];
