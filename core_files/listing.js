@@ -80,7 +80,9 @@ function getData2()
 	alert(xHRObject.responseText);
 	if ((xHRObject.readyState == 4) &&(xHRObject.status == 200))
 	{
-	saleid = xHRObject.responseText; 
+	saleid = xHRObject.responseText;
+	var spantag = document.getElementById("saleid");
+	spantag.innerHTML = xHRObject.responseText;
 	}
 }
 
