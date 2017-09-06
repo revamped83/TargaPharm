@@ -2,11 +2,11 @@
 <head>
 <meta charset="utf-8" />
 <title>Pharmacy...</title>
-<script type="text/javascript" src="listing.js"></script>
+<script type="text/javascript" src="addrecord.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onload="listing1();listing2();">
+<body onload="addrecord1();addrecord2();">
 <h1>Pharmacy...</h1>
 <ul>
   <li><a href="">Home</a></li>
@@ -45,7 +45,7 @@ $(document).ready(function() {
 			var d2 = d1+x;
 			var d3 = c3.replace(/sPrice/g,d2);			
             $(wrapper).append(d3); //add input box
-			listing1(x);
+			addrecord1(x);
         }
   else
   {
@@ -67,7 +67,7 @@ $(document).ready(function() {
 </div>
 
 
-<button type="button" onclick="listing();">Listing</button>
+<button type="button" onclick="addRecord();">Add Record</button>
 <input id="button" type="reset" value="Reset"/>
 </fieldset>
 </form>
