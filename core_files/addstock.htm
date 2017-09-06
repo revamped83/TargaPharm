@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Pharmacy...</title>
+<script type="text/javascript" src="addstock.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="addstock1();">
+<h1>Pharmacy...</h1>
+<ul>
+  <li><a href="">Home</a></li>
+  <li><a href="addrecord.htm">Add Record</a></li>
+  <li><a href="addstock.htm">Add Stock</a></li>
+  <li><a href="">Edit Record</a></li>
+  <li><a href="">Manage</a></li>
+</ul>
+<hr>
+<p class="center"><i>To create a add stock record, enter record details below.</i></p>
+<form>
+<fieldset>
+<legend>Record Details</legend>
+<p class="redonly"><i>*Request Fields</i></p>
+<label for="itName"><span id="txt">Item Name<span class="redonly">*</span></span><select id="itName"></select></label><input type="button" onclick="location.href='#';" value="Create new item" /></br></br>
+<label for="itQuan"><span id="txt">Item Quantity<span class="redonly">*</span></span><input type="txt" name="itQuan" id="itQuan" size="50"/></label></br></br>
+<label for="sPrice"><span id="txt">Wholesale Unit Price<span class="redonly">*</span></span><input type="txt" name="sPrice" id="sPrice" size="50"/></label></br></br>
+
+
+<button type="button" onclick="addstock();">Add Stock</button>
+<input id="button" type="reset" value="Reset"/>
+</fieldset>
+</form>
+<div id="output"></div>
+</body>
+</html>
