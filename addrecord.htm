@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Pharmacy...</title>
+<script type="text/javascript" src="addrecord.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="addrecord1();addrecord2();">
+<h1>Pharmacy...</h1>
+<ul>
+  <li><a href="">Home</a></li>
+  <li><a href="addrecord.htm">Add Record</a></li>
+  <li><a href="addstock.htm">Add Stock</a></li>
+  <li><a href="">Edit Record</a></li>
+  <li><a href="">Manage</a></li>
+</ul>
+<hr>
+<p class="center"><i>To create a record, enter record details below.</i></p>
+<form>
+<fieldset>
+<legend>Record Details</legend>
+<p class="redonly"><i>*Request Fields</i></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    var max_fields      = 10;
+    var wrapper         = $(".container1");
+    var add_button      = $(".add_form_field");
+ 
+    $(add_button).click(function(e){
+        e.preventDefault();
+        if(x < max_fields){
+            x++;
+			str = '<div><label for="itName"><span id="txt">Item Name<span class="redonly">*</span></span><select id="itName"></select></label><a href="#" class="delete">Delete</a></br></br><label for="itQuan"><span id="txt">Sale Quantity<span class="redonly">*</span></span><input type="txt" name="itQuan" id="itQuan" size="50"/></label></br></br><label for="sPrice"><span id="txt">Sale Price<span class="redonly">*</span></span><input type="txt" name="sPrice" id="sPrice" size="50"/></label></br></br></div>';
+			var a1 = "itName";
+			var a2 = a1+x;
+			var a3 = str.replace(/itName/g,a2);
+			var b1 = "Item Name";
+			var b2 = b1+x;
+			var b3 = a3.replace(/Item Name/g,b2);
+			var c1 = "itQuan";
+			var c2 = c1+x;
+			var c3 = b3.replace(/itQuan/g,c2);
+			var d1 = "sPrice";
+			var d2 = d1+x;
+			var d3 = c3.replace(/sPrice/g,d2);			
+            $(wrapper).append(d3); //add input box
+			addrecord1(x);
+        }
+  else
+  {
+  alert('You Reached the limits')
+  }
+    });
+ 
+    $(wrapper).on("click",".delete", function(e){
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<label for="saleid"><span id="txt">SaleID :</span><div id="saleid"></div></label></br>
+<div class="container1">
+<label for="itName"><span id="txt">asdasdsadsa<span class="redonly">*</span></span><select id="itName"></select></label><input type="button" class="add_form_field" value="Add more item"/>
+<input type="button" onclick="window.location.href='newItem.htm'" value="Create new item" /></br></br>
+<label for="itQuan"><span id="txt">Sale Quantity<span class="redonly">*</span></span><input type="txt" name="itQuan" id="itQuan" size="50"/></label></br></br>
+<label for="sPrice"><span id="txt">Sale Price<span class="redonly">*</span></span><input type="txt" name="sPrice" id="sPrice" size="50"/></label></br></br>
+</div>
+
+
+<button type="button" onclick="addRecord();">Add Record</button>
+<input id="button" type="reset" value="Reset"/>
+</fieldset>
+</form>
+<div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Pharmacy...</title>
+<script type="text/javascript" src="newItem.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Pharmacy...</h1>
+<ul>
+  <li><a href="">Home</a></li>
+  <li><a href="listing.htm">Add Record</a></li>
+  <li><a href="">Edit Record</a></li>
+  <li><a href="">Manage</a></li>
+</ul>
+<hr>
+<p class="center"><i>To create a new item, enter item details below.</i></p>
+<form>
+<fieldset>
+<legend>Seller Details</legend>
+<p class="redonly"><i>*Request Fields</i></p><div class="container1">
+<label for="itName"><span id="txt">Item Name<span class="redonly">*</span></span><input type="txt" name="itName" id="itName" size="70"/></label></br></br>
+<label for="itQuan"><span id="txt">Category<span class="redonly">*</span></span>
+ <select name="itCat" id="itCat">
+  <option value="Dental Hygiene">Dental Hygiene</option>
+  <option value="Wound Dressings">Wound Dressings</option>
+  <option value="Analgesic">Analgesic</option>
+  <option value="Personal Hygiene">Personal Hygiene</option>
+  <option value="Throat Lozenge">Throat Lozenge</option>
+</select> 
+</label></br></br>
+<label for="sPrice"><span id="txt">Stock quantity<span class="redonly">*</span></span><input type="txt" name="itStock" id="itStock" size="10"/></label></br></br>
+</div>
+
+
+<button type="button" onclick="creating();">Create</button>
+<input id="button" type="reset" value="Reset"/>
+</fieldset>
+</form>
+<div id="output"><div>
+</body>
+</html>
