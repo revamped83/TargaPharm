@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>TargaPharm Retail & Inventory Management</title>
+<script type="text/javascript" src="itemdisplay.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="display();">
+<h1>TargaPharm Retail & Inventory Management</h1>
+<ul>
+  <li><a href="home.htm">Home</a></li>
+  <li><a href="itemdisplay.htm">Items</a></li>
+  <li><a href="addstock.htm">Inventory</a></li>
+  <li><a href="">Sales</a></li>
+  <li><a href="">Management</a></li>
+</ul>
+<hr>
+<form>
+<fieldset>
+<legend>STOCK PURCHASES</legend>
+</br></br>
+<div id="output"></div>
+</br>
+<button type="button" onclick="change(1);"><</button>
+<button type="button" onclick="change(2);">></button>
+</br></br>
+<button type="button" onclick="window.location.href = 'addstock.htm';">New Stock Purchase</button>
+</fieldset>
+</form>
+</body>
+</html>
