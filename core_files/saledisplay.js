@@ -54,4 +54,11 @@ function edit(z)
 		window.location.href = "saleedit.htm";
 	}		
 }
-
+function detail(z)
+{
+	if(!isNaN(z))
+	{
+		sessionStorage.saleid = z;
+		window.location.href = "saledetail.htm";
+	}		
+}
