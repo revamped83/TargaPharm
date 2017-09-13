@@ -2,9 +2,10 @@
 <head>
 <meta charset="utf-8" />
 <title>TargaPharm Retail & Inventory Management</title>
+<script type="text/javascript" src="saledisplay.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body onload="display();">
 <h1>TargaPharm Retail & Inventory Management</h1>
 <ul>
   <li><a href="home.htm">Home</a></li>
@@ -16,8 +17,14 @@
 <hr>
 <form>
 <fieldset>
-<h1>Welcome to TargaPharm Retail & Inventory Management</h1>
-<center>Please choose action in the navigation bar<center>
+<legend>CUSTOMER SALES</legend>
+</br></br>
+<div id="output"></div>
+</br>
+<button type="button" onclick="change(1);"><</button>
+<button type="button" onclick="change(2);">></button>
+</br></br>
+<button type="button" onclick="window.location.href = 'addrecord.htm';">New Customer Sale</button>
 </fieldset>
 </form>
 </body>
