@@ -29,8 +29,8 @@ ul li a {
 ul li a:hover {
 	background-color: #666464;
 }
-ul li button {
-	font-size: x-large;
+#management {
+	font-size: medium;
 	display: inline-block;
 	text-decoration: none;
 	color: #692A67;
@@ -40,7 +40,7 @@ ul li button {
 	border-color : #999999;
 	background-color: #D3D3D3;
 }
-ul li button:hover {
+#management:hover {
 	background-color: #666464;
 }
 hr{
