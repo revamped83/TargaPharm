@@ -29,6 +29,20 @@ ul li a {
 ul li a:hover {
 	background-color: #666464;
 }
+ul li button {
+	font-size: x-large;
+	display: inline-block;
+	text-decoration: none;
+	color: #692A67;
+	border-radius: 10px;
+	padding: 0.2em 1.5em;
+	border: 2px solid;
+	border-color : #999999;
+	background-color: #D3D3D3;
+}
+ul li button:hover {
+	background-color: #666464;
+}
 hr{
   border-top: 1px solid #D3D3D3;
 }

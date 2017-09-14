@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8" />
 <title>TargaPharm Retail & Inventory Management</title>
-<script type="text/javascript" src="saledetail.js"></script>
+<script type="text/javascript" src="purchasesdisplay.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body onload="display();">
@@ -17,11 +17,14 @@
 <hr>
 <form>
 <fieldset>
-<legend>CUSTOMER SALES</legend>
+<legend>STOCK PURCHASES</legend>
 </br></br>
-<label for="saleid"><span id="txt">SaleID :</span><div id="saleid"></div></label>
 <div id="output"></div>
 </br>
+<button type="button" onclick="change(1);"><</button>
+<button type="button" onclick="change(2);">></button>
+</br></br>
+<button type="button" onclick="window.location.href = 'addstock.htm';">New Stock Purchase</button>
 </fieldset>
 </form>
 </body>
