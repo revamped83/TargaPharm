@@ -20,10 +20,12 @@ $row = mysqli_fetch_row($result);
 echo "<table width='100%' border='1'>";
 echo "<th>Item Name</th><th>Quantity</th><th>Unit Price</th>";
 while($row){
+	if($row[0]!=null){
 	echo "<tr><td>{$row[0]}</td>";
 	echo "<td>{$row[1]}</td>";
 	echo "<td>{$row[2]}</td></tr>";
 	$row = mysqli_fetch_row($result);
+	}
 }
 echo "</table>";
 mysqli_close($conn);
