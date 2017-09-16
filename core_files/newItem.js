@@ -22,8 +22,7 @@ function creating()
 {
 	var itName  = document.getElementById("itName").value;
 	var itCat  = document.getElementById("itCat").value;
-	var itStock  = document.getElementById("itStock").value;
-	xHRObject.open("GET", "newItem.php?&itName=" +  encodeURIComponent(itName)+ "&itCat=" + encodeURIComponent(itCat)+ "&itStock=" + encodeURIComponent(itStock) + "&value=" + Number(new Date), false);
+	xHRObject.open("GET", "newItem.php?&itName=" +  encodeURIComponent(itName)+ "&itCat=" + encodeURIComponent(itCat) + "&value=" + Number(new Date), false);
 	xHRObject.onreadystatechange = getData13;
 	xHRObject.send(null);
 }
