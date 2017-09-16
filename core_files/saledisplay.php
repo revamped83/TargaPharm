@@ -13,6 +13,7 @@ echo "<th>SaleID</th><th>Date/Time</th><th>Purchase Subtotal</th><th></th>";
 for($i=0;$i<$x;$i++)
 	$row = mysqli_fetch_row($result);
 for($i=0;$i<10;$i++) {
+	if($row[0]!=null){
 	echo "<tr><td>{$row[0]}</td>";
 	echo "<td>{$row[1]}</td>";
 	echo "<td>{$row[2]}</td>";
@@ -22,6 +23,7 @@ for($i=0;$i<10;$i++) {
 	echo "{$row[0]}";
 	echo ')"></td></tr>';
 	$row = mysqli_fetch_row($result);
+	}
 }
 echo "</table>";
 mysqli_close($conn);
