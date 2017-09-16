@@ -20,8 +20,6 @@ for($i=0;$i<10;$i++) {
 	echo "<td>{$row[3]}</td>";
 	echo '<td><input type="button" value="Edit" onclick="edit(';
 	echo "{$row[0]}";
-	echo ')"><input type="button" value="Detail" onclick="detail(';
-	echo "{$row[0]}";
 	echo ')"></td></tr>';
 	$row = mysqli_fetch_row($result);
 	}
