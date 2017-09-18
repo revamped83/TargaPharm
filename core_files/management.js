@@ -64,3 +64,34 @@ function report()
 	}
 }
 
+function lowstock() 
+{
+	xHRObject.open("GET", "lowstock.php?&action=" + encodeURIComponent(0)+ "&value=" + Number(new Date), false);
+	xHRObject.onreadystatechange = getData2;
+    xHRObject.send(null);
+}
+
+function getdata2()
+{
+	//alert(xHRObject.responseText);
+	if ((xHRObject.readyState == 4) &&(xHRObject.status == 200))
+	{
+	var spantag = document.getElementById("output");
+	spantag.innerHTML = xHRObject.responseText;
+	}
+}
+
+function popularbutton()
+{
+	var spantag = document.getElementById("output");
+	spantag.innerHTML = "<button type='button' onclick='popular(1);'>Sale Quantity</button>    <button type='button' onclick='popular(2);'>Sale Times</button></br></br>";
+}
+
+function popular(num)
+{
+	xHRObject.open("GET", "popularitem.php?&action=" + encodeURIComponent(num)+ "&value=" + Number(new Date), false);
+	xHRObject.onreadystatechange = getData2;
+    xHRObject.send(null);
+}
+
+
