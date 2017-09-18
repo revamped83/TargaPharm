@@ -9,8 +9,6 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_row($result);
 echo "<table width='100%' border='1'>";
 echo "<th>Item ID</th><th>Item Name</th><th>Item Category</th><th>Stock</th>";
-for($i=0;$i<5;$i++)
-	$row = mysqli_fetch_row($result);
 for($i=0;$i<5;$i++) {
 	if($row[0]!=null){
 	echo "<tr><td>{$row[0]}</td>";

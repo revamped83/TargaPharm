@@ -63,15 +63,7 @@ function report()
 		spantag.innerHTML = "</br>Pleaese select a month and a year";
 	}
 }
-
-function lowstock() 
-{
-	xHRObject.open("GET", "lowstock.php?&action=" + encodeURIComponent(0)+ "&value=" + Number(new Date), false);
-	xHRObject.onreadystatechange = getData2;
-    xHRObject.send(null);
-}
-
-function getdata2()
+function getData3()
 {
 	//alert(xHRObject.responseText);
 	if ((xHRObject.readyState == 4) &&(xHRObject.status == 200))
@@ -80,6 +72,14 @@ function getdata2()
 	spantag.innerHTML = xHRObject.responseText;
 	}
 }
+
+function lowstock() 
+{
+	xHRObject.open("GET", "lowstock.php?&action=" + encodeURIComponent(0)+ "&value=" + Number(new Date), false);
+	xHRObject.onreadystatechange = getData3;
+    xHRObject.send(null);
+}
+
 
 function popularbutton()
 {
@@ -90,7 +90,7 @@ function popularbutton()
 function popular(num)
 {
 	xHRObject.open("GET", "popularitem.php?&action=" + encodeURIComponent(num)+ "&value=" + Number(new Date), false);
-	xHRObject.onreadystatechange = getData2;
+	xHRObject.onreadystatechange = getData3;
     xHRObject.send(null);
 }
 
