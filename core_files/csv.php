@@ -7,7 +7,7 @@ header('Content-Disposition: attachment; filename=data.csv');
 $output = fopen('php://output', 'w');
 
 // output the column headings
-fputcsv($output, array('SaleID','ItemID', 'Item Name', 'Quantity', 'Unit Price', 'Subtotal' ));
+fputcsv($output, array('SaleID','ItemID', 'ItemName', 'Quantity', 'UnitPrice', 'Subtotal' ));
 
 // fetch the data
 $year = $_GET["action"];
