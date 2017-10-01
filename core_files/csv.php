@@ -16,7 +16,7 @@ $user = 'root';
 $pass = '';
 $dbname = 'targapharm';
 $conn = mysqli_connect($server, $user, $pass, $dbname);
-$rows = mysqli_query($conn,'SELECT a.saleid, a. itemid,b.itname,a.quantity,a.unitprice,c.subtotal from itemsale a INNER JOIN item b ON a.ItemID = b.ItemID INNER JOIN customersale c on a.SaleID = c.SaleID where Year(c.TimeDate) = '.$year.' ORDER BY `saleid` ASC');
+$rows = mysqli_query($conn,'SELECT a.saleid, a. itemid,b.itname,a.quantity,b.unitprice,c.subtotal from itemsale a INNER JOIN item b ON a.ItemID = b.ItemID INNER JOIN customersale c on a.SaleID = c.SaleID where Year(c.TimeDate) = '.$year.' ORDER BY `saleid` ASC');
 
 // loop over the rows, outputting them
 while ($row = mysqli_fetch_assoc($rows)) fputcsv($output, $row);

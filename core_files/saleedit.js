@@ -41,7 +41,7 @@ function saleedit()
 	}
 	
 }
-var x = 1;
+var x = 10;
 
 //the function will receive respone from php and display to htm page
 function getData1()
@@ -84,3 +84,64 @@ function getsaleid()
 	spantag.innerHTML = sessionStorage.saleid;
 }
 
+function getRecord1()
+{
+	//alert(xHRObject.responseText);
+	if ((xHRObject.readyState == 4) &&(xHRObject.status == 200))
+	{
+	var spantag = document.getElementById("container1");
+	spantag.innerHTML = xHRObject.responseText;
+	}
+}
+
+function getRecord() 
+{
+		xHRObject.open("GET", "getRecord.php?&action=" + encodeURIComponent(saleid)+ "&value=" + Number(new Date), false);
+		xHRObject.onreadystatechange = getRecord1;
+		xHRObject.send(null);
+}
+
+function getData3()
+{
+	//alert(xHRObject.responseText);
+	if ((xHRObject.readyState == 4) &&(xHRObject.status == 200))
+	{
+		if (item==1)
+		{
+			var spantag = document.getElementById("sPrice");
+			spantag.innerHTML = xHRObject.responseText;
+		}
+		else
+		{
+			var id1 = "sPrice" + item; 
+			var spantag = document.getElementById(id1);
+			spantag.innerHTML = xHRObject.responseText;
+		}
+	}
+}
+
+var item;
+function checkPrice(itemID, item1)
+{
+	if(itemID != null && itemID != "")
+	{
+		item = item1;
+		xHRObject.open("GET", "checkPrice.php?&itemID=" + encodeURIComponent(itemID) +"&value=" + Number(new Date), false);
+		xHRObject.onreadystatechange = getData3;
+		xHRObject.send(null);
+	}
+	else 
+	{
+		if (item==1)
+		{
+			var spantag = document.getElementById("sPrice");
+			spantag.innerHTML = "";
+		}
+		else
+		{
+			var id1 = "sPrice" + item; 
+			var spantag = document.getElementById(id1);
+			spantag.innerHTML = "";
+		}
+	}
+}

@@ -1,12 +1,13 @@
 <?php
-if((isset($_GET["itName"])) &&(isset($_GET["itCat"])))
+if((isset($_GET["itName"])) &&(isset($_GET["itCat"])) && (isset($_GET["price"])))
 {
-	if ((!empty($_GET["itName"])) && (!empty($_GET["itCat"])))
+	if ((!empty($_GET["itName"])) && (!empty($_GET["itCat"])) && (!empty($_GET["price"])))
 	{
-		
+		if ((is_numeric($_GET["price"])))
+		{
 			$itName = $_GET["itName"];
 			$itCat = $_GET["itCat"];
-			
+			$price = $_GET["price"];
 			$server = 'localhost';
 			$user = 'root';
 			$pass = '';
@@ -17,7 +18,7 @@ if((isset($_GET["itName"])) &&(isset($_GET["itCat"])))
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_array($result);
 			$itemID = $row["MAX(ItemID)"]+1;*/
-			$sql = "INSERT INTO item (ItName, ItCat, ItStockLevel) VALUES ('$itName','$itCat',0)";
+			$sql = "INSERT INTO item (ItName, ItCat, UnitPrice, ItStockLevel) VALUES ('$itName','$itCat', ".$price.",0)";
 			//echo "$itemID,$itName,$itCat,$itStock";
 			if(mysqli_query($conn, $sql))
 			{
@@ -28,7 +29,9 @@ if((isset($_GET["itName"])) &&(isset($_GET["itCat"])))
 				}
 			
 			mysqli_close($conn);
-		
+		}
+		else
+			echo 'Please enter Reatail Price as number';
 	}
 	else
 		echo 'Please fill in the blank';

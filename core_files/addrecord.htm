@@ -32,7 +32,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_fields){
             x++;
-			str = '<div><label for="itName"><span id="txt">Item Name<span class="redonly">*</span></span><select id="itName"></select></label><a href="#" class="delete">Delete</a></br></br><label for="itQuan"><span id="txt">Sale Quantity<span class="redonly">*</span></span><input type="txt" name="itQuan" id="itQuan" size="50"/></label></br></br><label for="sPrice"><span id="txt">Sale Price<span class="redonly">*</span></span><input type="txt" name="sPrice" id="sPrice" size="50"/></label></br></br></div>';
+			str = '<div><label for="itName"><span id="txt">Item Name<span class="redonly">*</span></span><select id="itName" onchange="checkPrice(this.value,1)"></select></label><a href="#" class="delete">Delete</a></br></br><label for="itQuan"><span id="txt">Sale Quantity<span class="redonly">*</span></span><input type="txt" name="itQuan" id="itQuan" size="50"/></label></br></br><label for="sPrice"><span id="txt">Sale Price<span class="redonly">*</span></span><div id="sPrice"></div></label></br></br></div>';
 			var a1 = "itName";
 			var a2 = a1+x;
 			var a3 = str.replace(/itName/g,a2);
@@ -44,8 +44,11 @@ $(document).ready(function() {
 			var c3 = b3.replace(/itQuan/g,c2);
 			var d1 = "sPrice";
 			var d2 = d1+x;
-			var d3 = c3.replace(/sPrice/g,d2);			
-            $(wrapper).append(d3); //add input box
+			var d3 = c3.replace(/sPrice/g,d2);
+			var e1 = "this.value,";
+			var e2 = e1+x;
+			var e3 = d3.replace(/this.value,1/g,e2);			
+            $(wrapper).append(e3); //add input box
 			addrecord1(x);
         }
   else
@@ -59,11 +62,11 @@ $(document).ready(function() {
     })
 });
 </script>
-<label for="saleid"><span id="txt">SaleID :</span><div id="saleid"></div></label></br>
+<label for="saleid"><span id="txt">SaleID </span><div id="saleid"></div></label></br>
 <div class="container1">
-<label for="itName"><span id="txt">Item Name<span class="redonly">*</span></span><select id="itName"></select></label><input type="button" class="add_form_field" value="Add more item"/></br></br>
+<label for="itName"><span id="txt">Item Name<span class="redonly">*</span></span><select id="itName" onchange="checkPrice(this.value,1)"></select></label><input type="button" class="add_form_field" value="Add more item"/></br></br>
 <label for="itQuan"><span id="txt">Sale Quantity<span class="redonly">*</span></span><input type="txt" name="itQuan" id="itQuan" size="50"/></label></br></br>
-<label for="sPrice"><span id="txt">Sale Price<span class="redonly">*</span></span><input type="txt" name="sPrice" id="sPrice" size="50"/></label></br></br>
+<label for="sPrice"><span id="txt">Sale Price<span class="redonly">*</span></span><div id="sPrice"></div></label></br></br>
 </div>
 
 

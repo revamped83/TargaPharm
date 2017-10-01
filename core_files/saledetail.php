@@ -14,7 +14,7 @@ echo '<label for="total"><span id="txt">Subtotal : </span>'.$row[1].'</label></b
 echo '<p>Item list</p>';
 }
 mysqli_free_result($result);
-$sql = "SELECT a.itname,b.quantity,b.unitprice from itemsale b INNER JOIN item a ON a.ItemID = b.ItemID where saleid = ".$x."";
+$sql = "SELECT a.itname,b.quantity,a.unitprice from itemsale b INNER JOIN item a ON a.ItemID = b.ItemID where saleid = ".$x."";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_row($result);
 echo "<table width='100%' border='1'>";

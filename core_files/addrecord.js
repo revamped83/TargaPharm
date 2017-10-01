@@ -28,16 +28,19 @@ function addRecord()
 	xHRObject.send(null);
 	for (i=1; i < x; i++)
 	{
-		a =  i+1;
-		b = "itName"+a;
-		c = "itQuan"+a;
-		d = "sPrice"+a;
 		var itID  = document.getElementById(b).value;
-		var itQuan  = document.getElementById(c).value;
-		var sPrice  = document.getElementById(d).value;
-		xHRObject.open("GET", "addrecord.php?&saleid=" +  encodeURIComponent(saleid)+ "&itID=" + encodeURIComponent(itID)+ "&itQuan=" + encodeURIComponent(itQuan)+"&sPrice=" + encodeURIComponent(sPrice)+ "&sid=" + encodeURIComponent("0") +"&value=" + Number(new Date), false);
-		xHRObject.onreadystatechange = getData13;
-		xHRObject.send(null);
+		if (itID != null && itID != "")
+		{
+			a =  i+1;
+			b = "itName"+a;
+			c = "itQuan"+a;
+			d = "sPrice"+a;
+			var itQuan  = document.getElementById(c).value;
+			var sPrice  = document.getElementById(d).value;
+			xHRObject.open("GET", "addrecord.php?&saleid=" +  encodeURIComponent(saleid)+ "&itID=" + encodeURIComponent(itID)+ "&itQuan=" + encodeURIComponent(itQuan)+"&sPrice=" + encodeURIComponent(sPrice)+ "&sid=" + encodeURIComponent("0") +"&value=" + Number(new Date), false);
+			xHRObject.onreadystatechange = getData13;
+			xHRObject.send(null);
+		}
 	}
 	
 }
@@ -66,9 +69,9 @@ function getData1()
 //the function will collect all the data and put to server to process
 function addrecord1() 
 {
-		xHRObject.open("GET", "addrecord1.php?&value=" + Number(new Date), false);
-		xHRObject.onreadystatechange = getData1;
-		xHRObject.send(null);
+	xHRObject.open("GET", "addrecord1.php?&value=" + Number(new Date), false);
+	xHRObject.onreadystatechange = getData1;
+	xHRObject.send(null);
 }
 
 
@@ -94,3 +97,33 @@ function addrecord2()
     xHRObject.send(null);
 }
 
+function getData3()
+{
+	//alert(xHRObject.responseText);
+	if ((xHRObject.readyState == 4) &&(xHRObject.status == 200))
+	{
+		if (item==1)
+		{
+			var spantag = document.getElementById("sPrice");
+			spantag.innerHTML = xHRObject.responseText;
+		}
+		else
+		{
+			var id1 = "sPrice" + item; 
+			var spantag = document.getElementById(id1);
+			spantag.innerHTML = xHRObject.responseText;
+		}
+	}
+}
+
+var item;
+function checkPrice(itemID, item1)
+{
+	if(itemID != null && itemID != "")
+	{
+		item = item1;
+		xHRObject.open("GET", "checkPrice.php?&itemID=" + encodeURIComponent(itemID) +"&value=" + Number(new Date), false);
+		xHRObject.onreadystatechange = getData3;
+		xHRObject.send(null);
+	}
+}
