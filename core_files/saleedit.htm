@@ -5,7 +5,7 @@
 <script type="text/javascript" src="saleedit.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onload="getsaleid();getRecord();">
+<body onload="getsaleid();getRecord();calculation();">
 <h1>TargaPharm Retail & Inventory Management</h1>
 <ul>
   <li><a href="home.htm">Home</a></li>
@@ -21,11 +21,13 @@
 <legend>Sale Record Details</legend>
 <p class="redonly"><i>*Request Fields</i></p>
 <label for="saleid"><span id="txt">SaleID </span><div id="saleid"></div></label></br>
+<label for="total"><span id="txt">Total </span><div id="Total"></div></label></br>
+<hr>
 <div id="container1">
 </div>
 
 
-<button type="button" onclick="addRecord();">Add Record</button>
+<button type="button" onclick="saleedit();">Edit Record</button>
 <input id="button" type="reset" value="Reset"/>
 </fieldset>
 </form>

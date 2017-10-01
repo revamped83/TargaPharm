@@ -105,18 +105,19 @@ function getData3()
 		if (item==1)
 		{
 			var spantag = document.getElementById("sPrice");
-			spantag.innerHTML = xHRObject.responseText;
+			spantag.value = xHRObject.responseText;
 		}
 		else
 		{
 			var id1 = "sPrice" + item; 
 			var spantag = document.getElementById(id1);
-			spantag.innerHTML = xHRObject.responseText;
+			spantag.value = xHRObject.responseText;
 		}
 	}
 }
 
 var item;
+
 function checkPrice(itemID, item1)
 {
 	if(itemID != null && itemID != "")
@@ -126,4 +127,37 @@ function checkPrice(itemID, item1)
 		xHRObject.onreadystatechange = getData3;
 		xHRObject.send(null);
 	}
+}
+
+var total=0;
+function calculation()
+{
+	for (y=1;y<=x;y++)
+	{
+		if (y == 1)
+		{
+			var h = document.getElementById("itQuan").value;
+			var n = document.getElementById("sPrice").value;
+			if (h != null && h != "" && n != null && n != "" )
+			{
+				total = h*n;
+			}
+		}
+		else
+		{
+			var id1 = "sPrice" +y; 
+			var id2 = "itQuan" +y; 
+			if (typeof document.getElementById(id1).value !== 'undefined' && typeof document.getElementById(id2).value !== 'undefined')
+			{
+				var h = document.getElementById(id1).value;
+				var n = document.getElementById(id2).value;
+				if (id1 != null && id1 != "" && id2 != null && id2 != "" )
+				{
+					total = total + (h*n);
+				}
+			}
+		}
+	}
+	var spantag = document.getElementById("Total");
+	spantag.innerHTML = total;
 }

@@ -35,9 +35,12 @@ function saleedit()
 		var itID  = document.getElementById(b).value;
 		var itQuan  = document.getElementById(c).value;
 		var sPrice  = document.getElementById(d).value;
-		xHRObject.open("GET", "saleedit.php?&saleid=" +  encodeURIComponent(saleid)+ "&itID=" + encodeURIComponent(itID)+ "&itQuan=" + encodeURIComponent(itQuan)+"&sPrice=" + encodeURIComponent(sPrice)+ "&sid=" + encodeURIComponent("0") +"&value=" + Number(new Date), false);
-		xHRObject.onreadystatechange = getData13;
-		xHRObject.send(null);
+		if (itID != null && itID != "" && itQuan != null && itQuan != "" )
+		{			
+			xHRObject.open("GET", "saleedit.php?&saleid=" +  encodeURIComponent(saleid)+ "&itID=" + encodeURIComponent(itID)+ "&itQuan=" + encodeURIComponent(itQuan)+"&sPrice=" + encodeURIComponent(sPrice)+ "&sid=" + encodeURIComponent("0") +"&value=" + Number(new Date), false);
+			xHRObject.onreadystatechange = getData13;
+			xHRObject.send(null);
+		}
 	}
 	
 }
@@ -109,13 +112,13 @@ function getData3()
 		if (item==1)
 		{
 			var spantag = document.getElementById("sPrice");
-			spantag.innerHTML = xHRObject.responseText;
+			spantag.value = xHRObject.responseText;
 		}
 		else
 		{
 			var id1 = "sPrice" + item; 
 			var spantag = document.getElementById(id1);
-			spantag.innerHTML = xHRObject.responseText;
+			spantag.value = xHRObject.responseText;
 		}
 	}
 }
@@ -123,9 +126,9 @@ function getData3()
 var item;
 function checkPrice(itemID, item1)
 {
+	item = item1;
 	if(itemID != null && itemID != "")
 	{
-		item = item1;
 		xHRObject.open("GET", "checkPrice.php?&itemID=" + encodeURIComponent(itemID) +"&value=" + Number(new Date), false);
 		xHRObject.onreadystatechange = getData3;
 		xHRObject.send(null);
@@ -135,13 +138,44 @@ function checkPrice(itemID, item1)
 		if (item==1)
 		{
 			var spantag = document.getElementById("sPrice");
-			spantag.innerHTML = "";
+			spantag.value = "";
 		}
 		else
 		{
 			var id1 = "sPrice" + item; 
 			var spantag = document.getElementById(id1);
-			spantag.innerHTML = "";
+			spantag.value = "";
 		}
 	}
 }
+
+var total=0;
+function calculation()
+{
+	for (y=1;y<10;y++)
+	{
+		if (y == 1)
+		{
+			var h = document.getElementById("itQuan").value;
+			var n = document.getElementById("sPrice").value;
+			if (h != null && h != "" && n != null && n != "" )
+			{
+				total = h*n;
+			}
+		}
+		else
+		{
+			var id1 = "sPrice" +y; 
+			var id2 = "itQuan" +y; 
+			var h = document.getElementById(id1).value;
+			var n = document.getElementById(id2).value;
+			if (id1 != null && id1 != "" && id2 != null && id2 != "" )
+			{
+				total = total + (h*n);
+			}
+		}
+	}
+	var spantag = document.getElementById("Total");
+	spantag.innerHTML = total;
+}
+

@@ -32,7 +32,7 @@ if ((isset($_GET["itID"])) && (isset($_GET["itQuan"])) && (isset($_GET["sPrice"]
 				$result = mysqli_query($conn, $sql);
 				$sql = "INSERT INTO CustomerSale (SaleID, SubTotal) VALUES (".$saleID.", ".$total.")";
 				if (mysqli_query($conn, $sql)){
-						$sql = "INSERT INTO itemsale (itemID, saleID, unitprice, Quantity) VALUES (".$itID.", ".$saleID.",".$sPrice." ,".$itQuan.")";
+						$sql = "INSERT INTO itemsale (itemID, saleID,  Quantity) VALUES (".$itID.", ".$saleID." ,".$itQuan.")";
 						if (mysqli_query($conn, $sql)){
 							$sql = "UPDATE item SET ItStockLevel = ItStockLevel - ".$itQuan." WHERE itemID = ".$itID."";
 							if (mysqli_query($conn, $sql)){
@@ -51,7 +51,7 @@ if ((isset($_GET["itID"])) && (isset($_GET["itQuan"])) && (isset($_GET["sPrice"]
 			{
 				$sql = "UPDATE CustomerSale SET SubTotal = SubTotal + ".$total." WHERE SaleID = ".$saleID."";
 				if (mysqli_query($conn, $sql)){
-						$sql = "INSERT INTO itemsale (itemID, saleID, unitprice, Quantity) VALUES (".$itID.", ".$saleID.",".$sPrice." ,".$itQuan.")";
+						$sql = "INSERT INTO itemsale (itemID, saleID, Quantity) VALUES (".$itID.", ".$saleID.",".$itQuan.")";
 						if (mysqli_query($conn, $sql)){
 							$sql = "UPDATE item SET ItStockLevel = ItStockLevel - ".$itQuan." WHERE itemID = ".$itID."";
 							if (mysqli_query($conn, $sql)){
