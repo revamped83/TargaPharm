@@ -2,6 +2,7 @@
 <head>
 <meta charset="utf-8" />
 <title>TargaPharm Retail & Inventory Management</title>
+<script type="text/javascript" src="home.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -17,8 +18,13 @@
 <form>
 <fieldset>
 <h1>Welcome to TargaPharm Retail & Inventory Management</h1>
-<center>Please choose action in the navigation bar<center>
+<center>Please login to continue</center>
+<label for="id"><span id="txt">Username<span class="redonly">*</span></span><input type="txt" name="id" id="id" size="15"/></label></br></br>
+<label for="pw"><span id="txt">Password<span class="redonly">*</span></span><input type="password" name="pw" id="pw" size="15"/></label>&nbsp;&nbsp;<img src="theicon" onmouseover="mouseoverPass();" onmouseout="mouseoutPass();" /></br></br>
+<button type="button" onclick="login();">Login</button>
+<input id="button" type="reset" value="Reset"/>
 </fieldset>
 </form>
+<div id="output"></div>
 </body>
 </html>

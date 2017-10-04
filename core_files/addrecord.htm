@@ -2,11 +2,12 @@
 <head>
 <meta charset="utf-8" />
 <title>TargaPharm Retail & Inventory Management</title>
+<script type="text/javascript" src="checkcred.js"></script>
 <script type="text/javascript" src="addrecord.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onload="addrecord1();addrecord2();">
+<body onload="checkcre();addrecord1();addrecord2();">
 <h1>TargaPharm Retail & Inventory Management</h1>
 <ul>
   <li><a href="home.htm">Home</a></li>
@@ -14,6 +15,7 @@
   <li><a href="purchasesdisplay.htm">Inventory</a></li>
   <li><a href="saledisplay.htm">Sales</a></li>
   <li><a href="management.htm">Management</a></li>
+  <li><a href="#" onclick="logout();">Logout</a></li>
 </ul>
 <hr>
 <p class="center"><i>To create a new sale record, enter details below.</i></p>

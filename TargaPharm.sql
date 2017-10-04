@@ -113,3 +113,18 @@ INSERT INTO ItemSale (SaleID, ItemID, Quantity) VALUES
 (5, 6, 1),
 (5, 4, 1),
 (6, 1, 10);
+
+--
+-- Dumping data for login
+--
+
+CREATE TABLE admin(
+accName VARCHAR(30) PRIMARY KEY,
+accPw VARCHAR(30) NOT NULL
+);
+CREATE TABLE staff(
+accName VARCHAR(30) PRIMARY KEY,
+accPw VARCHAR(30) NOT NULL
+);
+INSERT INTO admin (accName, accPw) VALUES ('admin','root1');
+INSERT INTO staff (accName, accPw) VALUES ('account1','123456');
