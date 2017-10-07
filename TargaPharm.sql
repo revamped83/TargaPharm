@@ -68,7 +68,22 @@ INSERT INTO Item (ItemID, ItName, ItCat, UnitPrice, ItStockLevel) VALUES
 (4, 'Panadeine Capsules - 30 Box', 'Analgesic', 6.00, 20),
 (5, 'Rexona Sport - Women - Roll-on', 'Personal Hygiene', 5.00, 20),
 (6, 'Aspro-Clear Effervescent Tablets - 30 Box', 'Analgesic', 6.50, 20),
-(7, 'Fishermans Friend Cough Drops', 'Throat Lozenge', 2.95, 20);
+(7, 'Fishermans Friend Cough Drops', 'Throat Lozenge', 2.95, 20)
+(8, 'Blackmores Vitamin E Cream 50G', 'Vitamins', 6.99, 5),
+(9, 'Healthy Care Propolis 2000mg 200 Capsules', 'Vitamins', 19.99, 6),
+(10, 'Healthy Care Grape Seed Extract 12000 Gold Jar 300 Capsules', 'Vitamins', 29.99, 20),
+(11, 'Lucas Papaw Ointment 25g', 'Skin Care', 5.99, 8),
+(12, 'Swisse Manuka Honey Detoxifying Facial Mask 70g', 'Skin Care', 9.00, 20),
+(13, 'Ego QV Gentle Wash 1.25 Kg', 'Skin Care', 16.99, 20),
+(14, 'Travel Minis For Men 4 Piece', 'Medicines', 9.99, 8),
+(15, 'Panamax 500mg 100 Tablets', 'Medicines', 1.99, 20),
+(16, 'Panadol Osteo 96 Caplets', 'Medicines', 4.99, 4),
+(17, 'Healthy Care Fish Oil 1000mg 400 Capsules', 'Krill and Fish Oil', 12.99, 7),
+(18, 'Blackmores Omega Triple Concentration Fish Oil 150 Capsules', 'Krill and Fish Oil', 25.99, 6),
+(19, 'Swisse Ultiboost Deep Sea Krill Oil 500mg 60 Capsules', 'Krill and Fish Oil', 16.99, 20),
+(20, 'Musashi Carnitine 500mg 60 Capsules', 'Sports Nutrition', 34.99, 8),
+(21, 'Musashi P High Protein 900g Chocolate', 'Sports Nutrition', 44.99, 20),
+(22, 'INC BCAA 120 Capsules', 'Sports Nutrition', 20.99, 4);
 
 -- --------------------------------------------------------
 
