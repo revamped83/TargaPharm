@@ -30,7 +30,8 @@ function result1()
 		else if (xHRObject.responseText == 2)
 		{
 			alert("Your access level: staff. Insufficient access level.");
-			history.back();
+			//history.back();
+			window.location = "home.htm";
 		}
 	}
 }
