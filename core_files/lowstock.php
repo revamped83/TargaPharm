@@ -4,7 +4,7 @@ $user = 'root';
 $pass = '';
 $dbname = 'targapharm';
 $conn = mysqli_connect($server, $user, $pass, $dbname);
-$sql = "SELECT * from item order by ItStockLevel asc";
+$sql = "SELECT itemid,itname,itcat,itstocklevel from item where itstocklevel < 10 order by ItStockLevel asc";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_row($result);
 echo "<table width='100%' border='1'>";

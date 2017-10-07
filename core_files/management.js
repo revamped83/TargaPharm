@@ -49,6 +49,26 @@ function csvMonth()
 		spantag.innerHTML = "</br>Pleaese select a year and a month";
 	}
 }
+
+function csvWeek() 
+{
+	var month = document.getElementById("month").value;
+	var year = document.getElementById("year").value;
+	var week = document.getElementById("week").value;
+	if(year != null && year != "" && month != null && month != "" && week != null && week != "")
+	{
+	var a = "csvWeek.php?&year=".concat(encodeURIComponent(year));
+	var b = a.concat("&month=").concat(encodeURIComponent(month));
+	var c = b.concat("&week=").concat(encodeURIComponent(week));
+	document.location.href = c;
+	}
+	else 
+	{
+		var spantag = document.getElementById("output1");
+		spantag.innerHTML = "</br>Pleaese select a year and a month";
+	}
+}
+
 function selectyear()
 {
 	var yearselect = '<select id="year"><option value="">Please select a year</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option></select><input type="button" onclick="csv();" value ="Download"></input><div id="output1"></div>';
@@ -94,4 +114,10 @@ function popular(num)
     xHRObject.send(null);
 }
 
+function selectweek()
+{
+	var weekselect = '<select id="week"><option value="">Please select a week</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select><select id="month"><option value="">Please select a month</option><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">Aug</option><option value="09">Sept</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select id="year"><option value="">Please select a year</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option></select><input type="button" onclick="csvWeek();" value ="Generate CSV"></input><div id="output1"></div>';
+	var spantag = document.getElementById("output");
+	spantag.innerHTML = weekselect;
+}
 
