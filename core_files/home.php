@@ -21,6 +21,8 @@ if ((isset($_GET["id"])) && (isset($_GET["pw"])))
 				echo "<p>Login successfully, your access level: administrator</p>";
 				$_SESSION["id"] = $id;
 				$_SESSION["isAdmin"] = 1;
+				$sql = "Insert into accesslog (accName,accesslv) values ('$id','admin')";
+				$result = mysqli_query($conn, $sql);
 			}
 			else
 			{
@@ -39,6 +41,8 @@ if ((isset($_GET["id"])) && (isset($_GET["pw"])))
 					echo "<p>Login successfully, your access level: staff</p>";
 					$_SESSION["id"] = $id;
 					$_SESSION["isAdmin"] = 0;
+					$sql = "Insert into accesslog (accName,accesslv) values ('$id','staff')";
+					$result = mysqli_query($conn, $sql);
 				}
 				else
 				{

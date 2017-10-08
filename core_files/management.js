@@ -180,3 +180,10 @@ function mouseoutPass(obj) {
   var obj = document.getElementById('pw');
   obj.type = "password";
 }
+
+function log() 
+{
+	xHRObject.open("GET", "log.php?&value=" + Number(new Date), false);
+	xHRObject.onreadystatechange = getData3;
+    xHRObject.send(null);
+}

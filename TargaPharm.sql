@@ -141,5 +141,11 @@ CREATE TABLE staff(
 accName VARCHAR(30) PRIMARY KEY,
 accPw VARCHAR(30) NOT NULL
 );
-INSERT INTO admin (accName, accPw) VALUES ('admin','root1');
-INSERT INTO staff (accName, accPw) VALUES ('account1','123456');
+INSERT INTO admin (accName, accPw) VALUES ('root1','zaqwsx');
+INSERT INTO staff (accName, accPw) VALUES ('staff2','123456');
+
+CREATE TABLE accesslog(
+accName VARCHAR(30),
+time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+accesslv varchar(5)
+);
