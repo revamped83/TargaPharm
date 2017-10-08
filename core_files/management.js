@@ -121,3 +121,62 @@ function selectweek()
 	spantag.innerHTML = weekselect;
 }
 
+function addacc()
+{
+	var spantag = document.getElementById("output");
+	spantag.innerHTML = '<p>New staff account:</p><label for="id"><span id="txt">Username<span class="redonly">*</span></span><input type="txt" name="id" id="id" size="15"/></label></br></br><label for="pw"><span id="txt">Password<span class="redonly">*</span></span><input type="password" name="pw" id="pw" size="15"/></label>&nbsp;&nbsp;<img src="theicon" onmouseover="mouseoverPass();" onmouseout="mouseoutPass();" /></br></br><button type="button" onclick="addacc1()">Create</button><div id="output1"></div>';
+}
+
+function addacc1() 
+{
+	var id = document.getElementById("id").value;
+	var pw = document.getElementById("pw").value;
+	if(id != null && id != "" && pw != null && pw != "")
+	{
+		var form = document.getElementById("1");
+		form.reset();
+		xHRObject.open("GET", "addacc.php?&id=" + encodeURIComponent(id)+ "&pw=" + encodeURIComponent(pw)+ "&value=" + Number(new Date), false);
+		xHRObject.onreadystatechange = getData2;
+		xHRObject.send(null);
+	}
+	else 
+	{
+		var spantag = document.getElementById("output1");
+		spantag.innerHTML = "</br>Please enter Username and Password";
+	}
+}
+
+function addadacc()
+{
+	var spantag = document.getElementById("output");
+	spantag.innerHTML = '<p>New admin account:</p><label for="id"><span id="txt">Username<span class="redonly">*</span></span><input type="txt" name="id" id="id" size="15"/></label></br></br><label for="pw"><span id="txt">Password<span class="redonly">*</span></span><input type="password" name="pw" id="pw" size="15"/></label>&nbsp;&nbsp;<img src="theicon" onmouseover="mouseoverPass();" onmouseout="mouseoutPass();" /></br></br><button type="button" onclick="addadacc1()">Create</button><div id="output1"></div>';
+}
+
+function addadacc1() 
+{
+	var id = document.getElementById("id").value;
+	var pw = document.getElementById("pw").value;
+	if(id != null && id != "" && pw != null && pw != "")
+	{
+		var form = document.getElementById("1");
+		form.reset();
+		xHRObject.open("GET", "addadacc.php?&id=" + encodeURIComponent(id)+ "&pw=" + encodeURIComponent(pw)+ "&value=" + Number(new Date), false);
+		xHRObject.onreadystatechange = getData2;
+		xHRObject.send(null);
+	}
+	else 
+	{
+		var spantag = document.getElementById("output1");
+		spantag.innerHTML = "</br>Please enter Username and Password";
+	}
+}
+
+
+function mouseoverPass(obj) {
+  var obj = document.getElementById('pw');
+  obj.type = "text";
+}
+function mouseoutPass(obj) {
+  var obj = document.getElementById('pw');
+  obj.type = "password";
+}

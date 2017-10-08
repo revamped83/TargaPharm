@@ -17,15 +17,20 @@
   <li><a href="#" onclick="logout();">Logout</a></li>
 </ul>
 <hr>
-<form>
+<form id="1">
 <fieldset>
 <h1>TargaPharm Management Console</h1>
+<h3>Stock management</h3>
 <input type="button" id="management" onclick="lowstock();" value="Low Stock Items"></input>
 <input type="button" id="management" onclick="popularbutton();" value="Display Popular Purchases"></input>
-</br>
+<h3>Report export</h3>
 <input type="button" id="management" onclick="selectweek();" value="Weekly Sales Report"></input>
 <input type="button" id="management" onclick="selectmonth();" value="Monthly Sales Report"></input>
-<input type="button" id="management" onclick="selectyear();" value="Yearly Sales Report"></input></br></br></br>
+<input type="button" id="management" onclick="selectyear();" value="Yearly Sales Report"></input>
+<h3>Account management</h3>
+<input type="button" id="management" onclick="addacc();" value="New staff account"></input>
+<input type="button" id="management" onclick="addadacc();" value="New admin account"></input>
+</br></br>
 <div id="output"></div>
 </fieldset>
 </form>
