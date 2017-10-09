@@ -68,7 +68,7 @@ INSERT INTO Item (ItemID, ItName, ItCat, UnitPrice, ItStockLevel) VALUES
 (4, 'Panadeine Capsules - 30 Box', 'Analgesic', 6.00, 20),
 (5, 'Rexona Sport - Women - Roll-on', 'Personal Hygiene', 5.00, 20),
 (6, 'Aspro-Clear Effervescent Tablets - 30 Box', 'Analgesic', 6.50, 20),
-(7, 'Fishermans Friend Cough Drops', 'Throat Lozenge', 2.95, 20)
+(7, 'Fishermans Friend Cough Drops', 'Throat Lozenge', 2.95, 20),
 (8, 'Blackmores Vitamin E Cream 50G', 'Vitamins', 6.99, 5),
 (9, 'Healthy Care Propolis 2000mg 200 Capsules', 'Vitamins', 19.99, 6),
 (10, 'Healthy Care Grape Seed Extract 12000 Gold Jar 300 Capsules', 'Vitamins', 29.99, 20),
